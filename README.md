@@ -52,8 +52,8 @@ With the rise of IoT, low-power networks like RPL have become critical. These ne
 
 ## Literature Survey
 
-1. **RPL Attack Detection and Mitigation in IoT**: Various approaches to detect and mitigate routing attacks using machine learning are explored, including methods for feature selection and optimization for constrained networks【5†source】.
-2. **Machine Learning Techniques for IoT Security**: Recent studies emphasize the use of Random Forest and other classifiers for effective intrusion detection in RPL-based networks【5†source】.
+1. **RPL Attack Detection and Mitigation in IoT**: Various approaches to detect and mitigate routing attacks using machine learning are explored, including methods for feature selection and optimization for constrained networks.
+2. **Machine Learning Techniques for IoT Security**: Recent studies emphasize the use of Random Forest and other classifiers for effective intrusion detection in RPL-based networks.
 
 ## Implemented System
 
