@@ -76,20 +76,6 @@ To run the project:
    python rpl_attack_detection.py
    ```
 
-## Testing
-
-The system is tested against:
-- **Rank Attacks**: Malicious nodes advertise false rank information.
-- **Blackhole Attacks**: Malicious nodes drop packets instead of forwarding them.
-
-## Results & Discussion
-
-Our system successfully identified and mitigated 95% of attacks in simulated environments with minimal overhead. Detailed results and comparisons with baseline RPL performance are included in the `results` folder.
-
-## Conclusion
-
-The proposed system enhances RPL security by providing an efficient method for detecting and mitigating routing attacks in real-time. Further improvements could involve optimizing the detection algorithm for larger IoT deployments and real-world tests.
-
 ## References
 
 - [Contiki OS](https://www.contiki-ng.org/)
