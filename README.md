@@ -1,7 +1,4 @@
 # Detection and Mitigation of RPL Attacks Using Machine Learning
-
-[![GitHub stars](https://img.shields.io/github/stars/Amrutakb/RPL-Attack-Detection)](https://github.com/Amrutakb/RPL-Attack-Detection/stargazers) [![GitHub forks](https://img.shields.io/github/forks/Amrutakb/RPL-Attack-Detection)](https://github.com/Amrutakb/RPL-Attack-Detection/network/members)
-
 ## Table of Contents 🧾
 - [Introduction 📌](#introduction)
 - [Motivation](#motivation)
