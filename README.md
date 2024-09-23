@@ -94,11 +94,3 @@ The proposed system enhances RPL security by providing an efficient method for d
 
 - [Contiki OS](https://www.contiki-ng.org/)
 - [Cooja Simulator](https://anrg.usc.edu/contiki/index.php/Cooja_Simulator)
-
-## Appendix
-
-Detailed test results, attack scripts, and simulation configurations are available in the `appendix` folder of this repository.
-
----
-
-You can customize this further based on your specific project needs and details from your own research【5†source】.
