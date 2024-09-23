@@ -19,64 +19,75 @@
 
 ## Introduction 📌
 
-RPL (Routing Protocol for Low-Power and Lossy Networks) is designed for IoT and low-power wireless networks. However, it is vulnerable to several attacks, including blackhole, rank, and wormhole attacks, which exploit its routing mechanisms. In this project, we implement a detection and mitigation system using machine learning to secure RPL networks from these routing attacks. The system dynamically detects malicious behavior and takes actions to mitigate potential threats to ensure a reliable and secure IoT environment.
+RPL (Routing Protocol for Low-Power and Lossy Networks) is designed for IoT and low-power wireless networks. However, it is vulnerable to several attacks, including decreased rank and DoS attacks, which exploit its routing mechanisms. This project implements a detection and mitigation system using machine learning to secure RPL networks from these routing attacks. The system captures network traffic, detects malicious behavior, and mitigates threats to ensure a secure IoT environment.
 
 ## Motivation
 
-IoT networks are highly susceptible to attacks due to their constrained resources and minimal security mechanisms. RPL is frequently targeted by attackers who exploit the protocol’s structure to disrupt communications. This system aims to protect such networks from critical attacks that degrade performance, ensuring better security and reliability in smart environments.
+With the rise of IoT, low-power networks like RPL have become critical. These networks are particularly vulnerable to security threats due to resource constraints. Attacks like decreased rank and DoS can degrade network performance, leading to data loss and compromised functionality. This project aims to provide a real-time detection and mitigation solution for these attacks using machine learning.
 
 ## Objectives
-- Simulate RPL attacks (e.g., rank, blackhole) using Contiki and Cooja.
-- Develop a machine learning-based Intrusion Detection System (IDS).
-- Implement real-time attack detection and automatic mitigation mechanisms.
-- Evaluate the system using various IoT scenarios.
+- Implement a Mininet-WiFi 6LoWPAN-based simulation of RPL networks.
+- Generate RPL attacks (e.g., decreased rank, DoS).
+- Capture traffic using Wireshark.
+- Use Random Forest for detecting attacks based on the captured network traffic.
 
 ## Installation
 
-1. Install [Contiki OS](https://www.contiki-ng.org/)
-2. Install [Cooja Simulator](https://anrg.usc.edu/contiki/index.php/Cooja_Simulator)
-3. Install Python and necessary libraries:
+1. Install [Mininet-WiFi](https://github.com/intrig-unicamp/mininet-wifi).
    ```bash
-   pip install scikit-learn pandas numpy
+   git clone https://github.com/intrig-unicamp/mininet-wifi.git
+   sudo ./install.sh -Wlnfv
    ```
-4. Clone this repository:
+2. Install RPLD:
    ```bash
-   git clone https://github.com/Amrutakb/RPL-Attack-Detection.git
-   cd RPL-Attack-Detection
+   sudo apt-get install rpld
    ```
+3. Ensure `rpld` runs in the background while capturing traffic:
+   ```bash
+   sudo rpld &
+   ```
+4. Download and configure `mac802154_hwsim` for the 6LoWPAN environment.
+5. Run Mininet-WiFi with the 6LoWPAN.py file:
+   ```bash
+   sudo python 6LoWPAN.py
+   ```
+6. Capture traffic using Wireshark and store the files for later analysis.
 
 ## Literature Survey
 
-1. **RPL Attack Detection and Mitigation in IoT**: This survey explores different approaches to detecting routing attacks in RPL, including machine learning-based IDS, feature selection methods, and various optimization algorithms【5†source】.
-2. **Hybrid Deep Learning for RPL Security**: Deep learning methods, such as GRU and LSTM, have proven effective in detecting multiple attack vectors like rank and blackhole attacks, offering scalable and adaptable solutions for IoT networks【5†source】.
+1. **RPL Attack Detection and Mitigation in IoT**: Various approaches to detect and mitigate routing attacks using machine learning are explored, including methods for feature selection and optimization for constrained networks【5†source】.
+2. **Machine Learning Techniques for IoT Security**: Recent studies emphasize the use of Random Forest and other classifiers for effective intrusion detection in RPL-based networks【5†source】.
 
 ## Implemented System
 
-We implemented a hybrid detection system using a machine learning model trained on network traffic data to detect rank and blackhole attacks. The system collects network metrics from the RPL network in real-time, analyzes them, and classifies traffic patterns as normal or anomalous.
+The system uses Mininet-WiFi for simulating 6LoWPAN networks with RPL. It generates attacks such as decreased rank and DoS attacks, capturing traffic in Wireshark for analysis. The captured data is processed, and Random Forest is planned to be used for detecting abnormal network behavior.
 
 ## System Design
 
-The system is designed to operate in two phases:
+The system operates in the following phases:
 
-1. **Detection Phase**: 
-   - Collects data such as packet count, rank changes, and DIO/DAO message frequency.
-   - Uses a Random Forest classifier to detect abnormal behavior.
-  
-2. **Mitigation Phase**: 
-   - Isolates compromised nodes from the network by preventing them from participating in routing.
+1. **Traffic Capture**: 
+   - Mininet-WiFi simulates the RPL network with attack scenarios.
+   - Wireshark captures the network traffic for later analysis.
+
+2. **Detection and Mitigation**:
+   - A machine learning model, specifically Random Forest, is used to classify network traffic as normal or under attack.
+   - Upon detecting an attack, the compromised nodes are isolated from the network.
 
 ## Implementation
 
 To run the project:
-1. Open the Cooja simulator.
-2. Load the RPL network topology.
-3. Run the attack scripts (`attack_simulation.py`).
-4. Start the IDS with the following command:
+1. Ensure Mininet-WiFi and RPLD are installed and running.
+2. Execute the `6LoWPAN.py` file to simulate the network.
    ```bash
-   python rpl_attack_detection.py
+   sudo python 6LoWPAN.py
    ```
+3. Start capturing traffic with Wireshark.
+4. After capturing sufficient data, proceed with analysis using a Random Forest model for attack detection.
 
 ## References
 
-- [Contiki OS](https://www.contiki-ng.org/)
-- [Cooja Simulator](https://anrg.usc.edu/contiki/index.php/Cooja_Simulator)
+- [Mininet-WiFi](https://github.com/intrig-unicamp/mininet-wifi)
+- [RPLD](https://github.com/cetic/rpld)
+
+This version reflects your implementation setup with Mininet-WiFi, 6LoWPAN, RPLD, and Wireshark【5†source】. Let me know if you need further adjustments!
