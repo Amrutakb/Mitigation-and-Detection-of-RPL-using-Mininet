@@ -41,7 +41,7 @@ IoT networks are highly susceptible to attacks due to their constrained resource
    ```
 4. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/RPL-Attack-Detection.git
+   git clone https://github.com/Amrutakb/RPL-Attack-Detection.git
    cd RPL-Attack-Detection
    ```
 
