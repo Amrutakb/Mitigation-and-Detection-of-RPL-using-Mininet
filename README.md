@@ -77,7 +77,7 @@ To run the project:
 1. Ensure Mininet-WiFi and RPLD are installed and running.
 2. Execute the `6LoWPAN.py` file to simulate the network.
    ```bash
-   sudo python 6LoWPAN.py
+   sudo python 6LoWPAN.py -r
    ```
 3. Start capturing traffic with Wireshark.
 4. After capturing sufficient data, proceed with analysis using a Random Forest model for attack detection.
